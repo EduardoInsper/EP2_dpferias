@@ -1,4 +1,5 @@
 import funcoes
+import dados
 nome=input("Qual o seu nome? ")
 print(f"Ok {nome}, você tem direito a pular 3 vezes e 2 ajudas!")                           
 print("As opções de resposta são "A", "B", "C", "D", "ajuda", "pula" e "parar"! ")
@@ -8,17 +9,18 @@ print("Vamos começar com questões do nível FACIL!")
 continua=input("Aperte ENTER para continuar...")
 pular=3
 ajudas=2
-id=0
+id=1
 nivel="facil"
-lista_sorteadas=list()
+lista_sorteada=list()
 lista_dinheiro=[0, 1000, 5000, 10000, 30000, 50000, 100000, 300000, 500000, 1000000]
-while continua!="exit" or continua!="EXIT" or dinheiro==100000:
+while continua!="exit" and continua!="EXIT" and dinheiro!=100000:
     questao= funcoes.sorteia_questao_inedida(dados.dados, nivel, lista_sorteadas)
     lista_sorteada.append(questao)
-    print(funcao.questao_para_texto(questao, id))
+    print(funcoes.questao_para_texto(questao, id))
     resposta= input(" ")
-    opcoes=[A, B, C, D, pula, ajuda]
+    opcoes=["A", "B", "C", "D", "pula", "ajuda"]
     if resposta in opcoes:
+        id+=1
         if resposta==questao["correta"]:
             dinheiro= lista_dinheiro[id]
             print("Você acertou! Seu prêmio atual é de R$ {dinheiro:.2f} ")

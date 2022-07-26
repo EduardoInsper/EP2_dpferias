@@ -49,7 +49,6 @@ def gera_ajuda(dic_questao):
     return res
 
 def valida_questao(dic_questao):
-    print(dic_questao)
     dic_problemas = {}
     dic_opcoes = {}
     conta_erro = 0
@@ -91,12 +90,8 @@ def valida_questao(dic_questao):
         dic_problemas['outro'] = 'numero_chaves_invalido'
         conta_erro += 1
     if conta_erro == 0:
-        print('Questão válida')
-        print(dic_problemas)
         return {}
     else:
-        print('Questão inválida')
-        print(dic_problemas)
         return dic_problemas
         
 def valida_questoes(lista_questoes):

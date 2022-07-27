@@ -21,10 +21,10 @@ while continua!="exit" and continua!="EXIT":
         print("\nPARABÉNS, você zerou o jogo e ganhou um milhão de reais!")
         break
     if dinheiro==30000:
-        print("Parabéns! Você está no nível médio")
+        print("Parabéns! Você está no nível médio\n")
         nivel="medio"
     if dinheiro==300000:
-        print("Parabéns! Você está no nível dificil")
+        print("Parabéns! Você está no nível dificil\n")
         nivel="dificil"
     ajuda_cond = False
     questao = funcoes.sorteia_questao_inedida(dados.dados, nivel, lista_sorteada)
@@ -78,19 +78,19 @@ while continua!="exit" and continua!="EXIT":
              if ajuda_cond == False:
                  ajudas -= 1
                  if ajudas>0:
-                     print(f"Ok, você tem {ajudas} ajudas restantes!")
-                     
-                     print(funcoes.gera_ajuda(questao))
-                     ajuda_cond = True
+                    print(f"Ok, você tem {ajudas} ajudas restantes!")
+                    continua=input("\nAperte ENTER para continuar... ")
+                    print(funcoes.gera_ajuda(questao))
+                    ajuda_cond = True
                  elif ajudas == 0:
-                     print(f"Ok, você não tem mais ajudas!")
-                     
-                     print(funcoes.gera_ajuda(questao))
-                     ajuda_cond = True
+                    print(f"Ok, você não tem mais ajudas!")
+                    continua=input("\nAperte ENTER para continuar... ")
+                    print(funcoes.gera_ajuda(questao))
+                    ajuda_cond = True
                  else:
-                     print("Não deu! Você não tem mais ajudas!")
-                     continua=input("\nAperte ENTER para continuar... ")
-                     ajuda_cond = True
+                    print("Não deu! Você não tem mais ajudas!")
+                    continua=input("\nAperte ENTER para continuar... ")
+                    ajuda_cond = True
 
         else:
             print("Que pena! Você errou e vai sair sem nada:(")

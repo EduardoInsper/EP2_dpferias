@@ -16,6 +16,7 @@ nivel="facil"
 lista_sorteada=[]
 lista_dinheiro=[0, 1000, 5000, 10000, 30000, 50000, 100000, 300000, 500000, 1000000]
 dinheiro = lista_dinheiro[id]
+questao = funcoes.sorteia_questao_inedida(dados.dados, nivel, lista_sorteada)
 while continua!="exit" and continua!="EXIT":
     if dinheiro == 1000000:
         print("\nPARABÉNS, você zerou o jogo e ganhou um milhão de reais!")
@@ -26,9 +27,6 @@ while continua!="exit" and continua!="EXIT":
     if dinheiro==300000:
         print("Parabéns! Você está no nível dificil\n")
         nivel="dificil"
-    ajuda_cond = False
-    questao = funcoes.sorteia_questao_inedida(dados.dados, nivel, lista_sorteada)
-    lista_sorteada.append(questao)
     print(funcoes.questao_para_texto(questao, id))
     resposta= input("\nSua resposta: ")
     opcoes=["A", "B", "C", "D", "pula", "ajuda"]
@@ -42,6 +40,8 @@ while continua!="exit" and continua!="EXIT":
             print(f"Você acertou! Seu prêmio atual é de R$ {dinheiro} ")
             continua=input("Aperte ENTER para continuar ou EXIT para sair...\n\n")
             id+=1
+            ajuda_cond = False
+            questao = funcoes.sorteia_questao_inedida(dados.dados, nivel, lista_sorteada)
         elif resposta=="pula":
             if pular>0:
                 pular -= 1
@@ -50,48 +50,32 @@ while continua!="exit" and continua!="EXIT":
                 else:
                     print(f"Ok, pulando! Você ainda tem {pular} pulos! ")
                 continua=input("Aperte ENTER para continuar...\n\n")
+                questao = funcoes.sorteia_questao_inedida(dados.dados, nivel, lista_sorteada)
+                ajuda_cond = False
             else:
                 print("Não deu! Você não tem mais direito a pulos!")
                 continua=input("Aperte ENTER para continuar...\n\n")
                 print(funcoes.questao_para_texto(questao, id))
-                resposta= input("\nSua resposta: ")
-                if resposta==questao["correta"]:
-                    dinheiro = lista_dinheiro[id]
-                    print(f"Você acertou! Seu prêmio atual é de R$ {dinheiro} ")
-                    continua=input("Aperte ENTER para continuar ou EXIT para sair...\n\n")
-                    id+=1
-                else:
-                    print("Que pena! Você errou e vai sair sem nada:(")
-                    continua=input("Aperte EXIT para sair ou ENTER para recomeçar... ")
-                    if continua=="exit" or continua=="EXIT":
-                        print("Obrigado por jogar!")
-                        break
-                    else:
-                        print("O jogo vai recomeçar!")
-                        continua=input("Aperte ENTER para continuar... ")
-                        id=1
-                        lista_sorteada=[]
-                        pular=3
-                        ajudas=2
+                resposta= input("\nSua resposta: ")     
         elif resposta=="ajuda":
-            
-             if ajuda_cond == False:
-                 ajudas -= 1
-                 if ajudas>0:
+            if ajuda_cond == False:
+                ajudas -= 1
+                if ajudas>0:
                     print(f"Ok, você tem {ajudas} ajudas restantes!")
                     continua=input("\nAperte ENTER para continuar... ")
                     print(funcoes.gera_ajuda(questao))
                     ajuda_cond = True
-                 elif ajudas == 0:
+                elif ajudas == 0:
                     print(f"Ok, você não tem mais ajudas!")
                     continua=input("\nAperte ENTER para continuar... ")
                     print(funcoes.gera_ajuda(questao))
                     ajuda_cond = True
-                 else:
+                else :
                     print("Não deu! Você não tem mais ajudas!")
                     continua=input("\nAperte ENTER para continuar... ")
-                    ajuda_cond = True
-
+            elif ajuda_cond == True:
+                 print("Não deu! Você já pediu ajuda nessa questão!")
+                 continua=input("\nAperte ENTER para continuar... ")
         else:
             print("Que pena! Você errou e vai sair sem nada:(")
             continua=input("Aperte EXIT para sair ou ENTER para recomeçar... ")
@@ -105,3 +89,5 @@ while continua!="exit" and continua!="EXIT":
                 lista_sorteada=[]
                 pular=3
                 ajudas=2
+                questao = funcoes.sorteia_questao_inedida(dados.dados, nivel, lista_sorteada)
+                ajuda_cond = False

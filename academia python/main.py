@@ -65,23 +65,23 @@ while continua!="exit" and continua!="EXIT":
                         continua=input("Aperte ENTER para continuar... ")
                         id=1
                         lista_sorteada=[]
-        elif resposta=="ajuda":
-            if ajuda_cond == False:
-                ajudas -= 1
-                if ajudas>0:
-                    print(f"Ok, você tem {ajudas} ajudas restantes!")
-                    continua=input("\nAperte ENTER para continuar... ")
-                    print(funcoes.gera_ajuda(questao))
-                    ajuda_cond = True
-                elif ajudas == 0:
-                    print(f"Ok, você não tem mais ajudas!")
-                    continua=input("\nAperte ENTER para continuar... ")
-                    print(funcoes.gera_ajuda(questao))
-                    ajuda_cond = True
-                else:
-                    print("Não deu! Você não tem mais ajudas!")
-                    continua=input("\nAperte ENTER para continuar... ")
-                    ajuda_cond = True
+        # elif resposta=="ajuda":
+        #     if ajuda_cond == False:
+        #         ajudas -= 1
+        #         if ajudas>0:
+        #             print(f"Ok, você tem {ajudas} ajudas restantes!")
+        #             continua=input("\nAperte ENTER para continuar... ")
+        #             print(funcoes.gera_ajuda(questao))
+        #             ajuda_cond = True
+        #         elif ajudas == 0:
+        #             print(f"Ok, você não tem mais ajudas!")
+        #             continua=input("\nAperte ENTER para continuar... ")
+        #             print(funcoes.gera_ajuda(questao))
+        #             ajuda_cond = True
+        #         else:
+        #             print("Não deu! Você não tem mais ajudas!")
+        #             continua=input("\nAperte ENTER para continuar... ")
+        #             ajuda_cond = True
 
         else:
             print("Que pena! Você errou e vai sair sem nada:(")

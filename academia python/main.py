@@ -11,6 +11,7 @@ continua=input("Aperte ENTER para continuar...\n\n")
 pular=3
 ajudas=2
 id=1
+ajuda_cond = False
 nivel="facil"
 lista_sorteada=[]
 lista_dinheiro=[0, 1000, 5000, 10000, 30000, 50000, 100000, 300000, 500000, 1000000]
@@ -19,6 +20,7 @@ while continua!="exit" and continua!="EXIT":
     if dinheiro == 1000000:
         print("\nPARABÉNS, você zerou o jogo e ganhou um milhão de reais!")
         break
+    ajuda_cond = False
     questao = funcoes.sorteia_questao_inedida(dados.dados, nivel, lista_sorteada)
     lista_sorteada.append(questao)
     print(funcoes.questao_para_texto(questao, id))
@@ -63,6 +65,24 @@ while continua!="exit" and continua!="EXIT":
                         continua=input("Aperte ENTER para continuar... ")
                         id=1
                         lista_sorteada=[]
+        elif resposta=="ajuda":
+            if ajuda_cond == False:
+                ajudas -= 1
+                if ajudas>0:
+                    print(f"Ok, você tem {ajudas} ajudas restantes!")
+                    continua=input("\nAperte ENTER para continuar... ")
+                    print(funcoes.gera_ajuda(questao))
+                    ajuda_cond = True
+                elif ajudas == 0:
+                    print(f"Ok, você não tem mais ajudas!")
+                    continua=input("\nAperte ENTER para continuar... ")
+                    print(funcoes.gera_ajuda(questao))
+                    ajuda_cond = True
+                else:
+                    print("Não deu! Você não tem mais ajudas!")
+                    continua=input("\nAperte ENTER para continuar... ")
+                    ajuda_cond = True
+
         else:
             print("Que pena! Você errou e vai sair sem nada:(")
             continua=input("Aperte EXIT para sair ou ENTER para recomeçar... ")

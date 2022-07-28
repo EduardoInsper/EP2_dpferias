@@ -1,12 +1,14 @@
 import funcoes
 import dados
-print('\nOlá! Você está na Fortuna DesSoft e terá a oportunidade de enriquecer!\n')
+print("\n")
+print('\033[0;37;45m Olá! Você está na Fortuna DesSoft e terá a oportunidade de enriquecer! \033[0;0m')
+print("\n")
 nome=input("Qual o seu nome? ")
 print(f"\nOk {nome}, você tem direito a pular 3 vezes e 2 ajudas!")                           
 print('As opções de resposta são "A", "B", "C", "D", "ajuda", "pula" e "parar"!\n')
 input("Aperte ENTER para continuar...")
 print("\nO jogo já vai começar! Lá vem a primeira questão!\n")
-print("Vamos começar com questões do nível FACIL!")                                      
+print("\033[3;36m Vamos começar com questões do nível FACIL! \033[0;0m")                                      
 continua=input("Aperte ENTER para continuar...\n\n")
 id=1
 pular=3
@@ -19,7 +21,7 @@ dinheiro = lista_dinheiro[id-1]
 questao = funcoes.sorteia_questao_inedida(dados.dados, nivel, lista_sorteada)
 while continua!="exit" and continua!="EXIT":
     if dinheiro == 1000000:
-        print("\nPARABÉNS, você zerou o jogo e ganhou um milhão de reais!")
+        print("\033[1;30;42m \nPARABÉNS, você zerou o jogo e ganhou um milhão de reais! \033[0;0m ")
         break
     print(funcoes.questao_para_texto(questao, id))
     resposta= input("\nSua resposta: ")
@@ -31,15 +33,15 @@ while continua!="exit" and continua!="EXIT":
     else:
         if resposta==questao["correta"]:
             dinheiro = lista_dinheiro[id]
-            print(f"Você acertou! Seu prêmio atual é de R$ {dinheiro} ")
+            print(f"\033[3;32m Você acertou! Seu prêmio atual é de R$ {dinheiro:.2f} \033[0;0m ")
             continua=input("Aperte ENTER para continuar ou EXIT para sair...\n\n")
             id+=1
             ajuda_cond = False
             if dinheiro==30000:
-                print("Parabéns! Você está no nível médio\n")
+                print("\033[3;33m Parabéns! Você está no nível MEDIO\n \033[0;0m")
                 nivel="medio"
             if dinheiro==300000:
-                print("Parabéns! Você está no nível dificil\n")
+                print("\033[3;31m Parabéns! Você está no nível DIFICIL\n \033[0;0m")
                 nivel="dificil"
             questao = funcoes.sorteia_questao_inedida(dados.dados, nivel, lista_sorteada)
         elif resposta=="pula":
@@ -63,12 +65,12 @@ while continua!="exit" and continua!="EXIT":
                 if ajudas>0:
                     print(f"Ok, você tem {ajudas} ajudas restantes!")
                     continua=input("\nAperte ENTER para continuar... ")
-                    print(funcoes.gera_ajuda(questao))
+                    print(f"\033[1;37m {funcoes.gera_ajuda(questao)} \033[0;0m")
                     ajuda_cond = True
                 elif ajudas == 0:
                     print(f"Ok, você não tem mais ajudas!")
                     continua=input("\nAperte ENTER para continuar... ")
-                    print(funcoes.gera_ajuda(questao))
+                    print(f"\033[1;37m {funcoes.gera_ajuda(questao)} \033[0;0m")
                     ajuda_cond = True
                 else :
                     print("Não deu! Você não tem mais ajudas!")
@@ -82,13 +84,13 @@ while continua!="exit" and continua!="EXIT":
                 print(f"Ok, você saiu com R$ {dinheiro}!")
                 break
         else:
-            print("Que pena! Você errou e vai sair sem nada:(")
+            print(" \033[1;30;41m Que pena! Você errou e vai sair sem nada:( \033[0;0m ")
             continua=input("Aperte EXIT para sair ou ENTER para recomeçar... ")
             if continua=="exit" or continua=="EXIT":
                 print("Obrigado por jogar!")
                 break
             else:
-                print("O jogo vai recomeçar!")
+                print("\033[0;37;45m O jogo vai recomeçar! \033[0;0m")
                 continua=input("Aperte ENTER para continuar... ")
                 id=1
                 lista_sorteada=[]

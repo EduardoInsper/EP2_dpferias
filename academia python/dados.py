@@ -4,6 +4,26 @@ erros = funcoes.valida_questoes([{'titulo': 'Qual o resultado da operação 57 +
           'opcoes': {'A': '-19', 'B': '85', 'C': '89', 'D': '99'},
           'correta': 'C'},
 
+        {'titulo': 'Quais o menor e o maior país do mundo?',
+          'nivel': 'facil',
+          'opcoes': {'A': 'Vaticano e Rússia', 'B': 'Nauru e China', 'C': 'Mônaco e Canadá', 'D': 'São Marino e Índia'},
+          'correta': 'A'},
+
+        {'titulo': 'Quantas casas decimais tem o número pi?',
+          'nivel': 'facil',
+          'opcoes': {'A': 'Milhares', 'B': 'Centenas', 'C': 'Duas', 'D': 'Infinitas'},
+          'correta': 'D'},
+          
+        {'titulo': 'Quem pintou "Guernica"?',
+          'nivel': 'facil',
+          'opcoes': {'A': 'Paul Cézanne', 'B': 'Pablo Picasso', 'C': 'Salvador Dalí', 'D': 'Tarsila do Amaral'},
+          'correta': 'B'},
+
+        {'titulo': 'Em qual local da Ásia o português é língua oficial?',
+          'nivel': 'facil',
+          'opcoes': {'A': 'Portugal', 'B': 'Índia', 'C': 'Macau', 'D': 'Moçambique'},
+          'correta': 'C'},
+          
          {'titulo': 'Qual a capital do Brasil?',
           'nivel': 'facil',
           'opcoes': {'A': 'Brasília', 'B': 'Rio de janeiro', 'C': 'São Paulo', 'D': 'Osasco'},
@@ -58,6 +78,26 @@ erros = funcoes.valida_questoes([{'titulo': 'Qual o resultado da operação 57 +
           'nivel': 'facil',
           'opcoes': {'A': 'Natação', 'B': 'Vôlei', 'C': 'Ski Cross Country', 'D': 'Futebol'},
           'correta': 'C'},
+
+        {'titulo': 'Qual o nome do presidente do Brasil que ficou conhecido como Jango?',
+          'nivel': 'medio',
+          'opcoes': {'A': 'João Figueiredo', 'B': 'João Goulart', 'C': 'Getúlio Vargas', 'D': 'Jânio Quadro'},
+          'correta': 'D'},
+
+        {'titulo': 'Qual o grupo em que todas as palavras foram escritas corretamente?',
+          'nivel': 'medio',
+          'opcoes': {'A': 'Asterístico, beneficiente, meteorologia, entertido', 'B': 'Asterisco, beneficente, meteorologia, entretido', 'C': 'Asterístico, beneficiente, metereologia, entretido', 'D': 'Asterisco, beneficiente, metereologia, entretido'},
+          'correta': 'B'},
+          
+        {'titulo': 'Qual o grupo em que todas as palavras foram escritas corretamente?',
+          'nivel': 'medio',
+          'opcoes': {'A': 'Asterístico, beneficiente, meteorologia, entertido', 'B': 'Asterisco, beneficente, meteorologia, entretido', 'C': 'Asterístico, beneficiente, metereologia, entretido', 'D': 'Asterisco, beneficiente, metereologia, entretido'},
+          'correta': 'B'},
+          
+        {'titulo': 'Qual a montanha mais alta do Brasil?',
+          'nivel': 'medio',
+          'opcoes': {'A': 'Pico da Neblina', 'B': 'Pico Paraná', 'C': 'Monte Roraima', 'D': 'Pico Maior de Friburgo'},
+          'correta': 'A'},
          
          {'titulo': 'Qual o resultado da operação 5 + 2 * 3?',
           'nivel': 'medio',
@@ -157,7 +197,27 @@ erros = funcoes.valida_questoes([{'titulo': 'Qual o resultado da operação 57 +
          {'titulo': 'O que é Necrose?',
           'nivel': 'dificil',
           'opcoes': {'A': 'Uma banda de Rock', 'B': 'Uma marca de luxo', 'C': 'Cidade Francesa', 'D': 'Morte de tecido orgânico'},
-          'correta': 'D'}
+          'correta': 'D'},
+
+        {'titulo': 'Normalmente, quantos litros de sangue uma pessoa tem? Em média, quantos são retirados numa doação de sangue?',
+          'nivel': 'dificil',
+          'opcoes': {'A': 'Tem entre 2 a 4 litros. São retirados 450 mililitros', 'B': 'Tem entre 4 a 6 litros. São retirados 450 mililitros', 'C': 'Tem 10 litros. São retirados 2 litros', 'D': 'Tem 7 litros. São retirados 1,5 litros'},
+          'correta': 'B'},
+
+        {'titulo': 'Qual o livro mais vendido no mundo a seguir à Bíblia?',
+          'nivel': 'dificil',
+          'opcoes': {'A': 'O Senhor dos Anéis', 'B': 'O Pequeno Príncipe', 'C': 'Dom Quixote', 'D': ' Um Conto de Duas Cidades'},
+          'correta': 'C'},
+      
+        {'titulo': 'Qual a altura da rede de vôlei nos jogos masculino e feminino?',
+          'nivel': 'dificil',
+          'opcoes': {'A': '2,4 para ambos', 'B': '1,8 m e 1,5 m', 'C': '2,43 m e 2,24 m', 'D': '2,45 m e 2,15 m'},
+          'correta': 'C'},
+            
+        {'titulo': 'Em que período da pré-história o fogo foi descoberto?',
+          'nivel': 'dificil',
+          'opcoes': {'A': 'Neolítico', 'B': 'Paleolítico', 'C': 'Idade dos Metais', 'D': 'Período da Pedra Polida'},
+          'correta': 'B'}
         ])
 #print(erros)
 dados = funcoes.transforma_base([{'titulo': 'Qual o resultado da operação 57 + 32?',
@@ -165,6 +225,31 @@ dados = funcoes.transforma_base([{'titulo': 'Qual o resultado da operação 57 +
           'opcoes': {'A': '-19', 'B': '85', 'C': '89', 'D': '99'},
           'correta': 'C'},
 
+        {'titulo': 'Quais o menor e o maior país do mundo?',
+          'nivel': 'facil',
+          'opcoes': {'A': 'Vaticano e Rússia', 'B': 'Nauru e China', 'C': 'Mônaco e Canadá', 'D': 'São Marino e Índia'},
+          'correta': 'A'},
+
+        {'titulo': 'Quantas casas decimais tem o número pi?',
+          'nivel': 'facil',
+          'opcoes': {'A': 'Milhares', 'B': 'Centenas', 'C': 'Duas', 'D': 'Infinitas'},
+          'correta': 'D'},
+          
+        {'titulo': 'Quem pintou "Guernica"?',
+          'nivel': 'facil',
+          'opcoes': {'A': 'Paul Cézanne', 'B': 'Pablo Picasso', 'C': 'Salvador Dalí', 'D': 'Tarsila do Amaral'},
+          'correta': 'B'},
+
+        {'titulo': 'Em qual local da Ásia o português é língua oficial?',
+          'nivel': 'facil',
+          'opcoes': {'A': 'Portugal', 'B': 'Índia', 'C': 'Macau', 'D': 'Moçambique'},
+          'correta': 'C'},
+
+        {'titulo': 'Quem é o autor de “O Príncipe”?',
+          'nivel': 'medio',
+          'opcoes': {'A': 'Maquiavel', 'B': 'Antoine de Saint-Exupéry', 'C': 'Montesquieu', 'D': 'Rousseau'},
+          'correta': 'A'},
+
          {'titulo': 'Qual a capital do Brasil?',
           'nivel': 'facil',
           'opcoes': {'A': 'Brasília', 'B': 'Rio de janeiro', 'C': 'São Paulo', 'D': 'Osasco'},
@@ -219,6 +304,26 @@ dados = funcoes.transforma_base([{'titulo': 'Qual o resultado da operação 57 +
           'nivel': 'facil',
           'opcoes': {'A': 'Natação', 'B': 'Vôlei', 'C': 'Ski Cross Country', 'D': 'Futebol'},
           'correta': 'C'},
+
+        {'titulo': 'Qual o nome do presidente do Brasil que ficou conhecido como Jango?',
+          'nivel': 'medio',
+          'opcoes': {'A': 'João Figueiredo', 'B': 'João Goulart', 'C': 'Getúlio Vargas', 'D': 'Jânio Quadro'},
+          'correta': 'D'},
+
+        {'titulo': 'Qual o grupo em que todas as palavras foram escritas corretamente?',
+          'nivel': 'medio',
+          'opcoes': {'A': 'Asterístico, beneficiente, meteorologia, entertido', 'B': 'Asterisco, beneficente, meteorologia, entretido', 'C': 'Asterístico, beneficiente, metereologia, entretido', 'D': 'Asterisco, beneficiente, metereologia, entretido'},
+          'correta': 'B'},
+          
+        {'titulo': 'Qual o grupo em que todas as palavras foram escritas corretamente?',
+          'nivel': 'medio',
+          "opcoes": {'A': 'Asterístico, beneficiente, meteorologia, entertido', 'B': 'Asterisco, beneficente, meteorologia, entretido', 'C': 'Asterístico, beneficiente, metereologia, entretido', 'D': 'Asterisco, beneficiente, metereologia, entretido'},
+          'correta': 'B'},
+          
+        {'titulo': 'Qual a montanha mais alta do Brasil?',
+          'nivel': 'medio',
+          'opcoes': {'A': 'Pico da Neblina', 'B': 'Pico Paraná', 'C': 'Monte Roraima', 'D': 'Pico Maior de Friburgo'},
+          'correta': 'A'},
          
          {'titulo': 'Qual o resultado da operação 5 + 2 * 3?',
           'nivel': 'medio',
@@ -318,5 +423,26 @@ dados = funcoes.transforma_base([{'titulo': 'Qual o resultado da operação 57 +
          {'titulo': 'O que é Necrose?',
           'nivel': 'dificil',
           'opcoes': {'A': 'Uma banda de Rock', 'B': 'Uma marca de luxo', 'C': 'Cidade Francesa', 'D': 'Morte de tecido orgânico'},
-          'correta': 'D'}
+          'correta': 'D'},
+
+        {'titulo': 'Normalmente, quantos litros de sangue uma pessoa tem? Em média, quantos são retirados numa doação de sangue?',
+          'nivel': 'dificil',
+          'opcoes': {'A': 'Tem entre 2 a 4 litros. São retirados 450 mililitros', 'B': 'Tem entre 4 a 6 litros. São retirados 450 mililitros', 'C': 'Tem 10 litros. São retirados 2 litros', 'D': 'Tem 7 litros. São retirados 1,5 litros'},
+          'correta': 'B'},
+
+        {'titulo': 'Qual o livro mais vendido no mundo a seguir à Bíblia?',
+          'nivel': 'dificil',
+          'opcoes': {'A': 'O Senhor dos Anéis', 'B': 'O Pequeno Príncipe', 'C': 'Dom Quixote', 'D': ' Um Conto de Duas Cidades'},
+          'correta': 'C'},
+      
+        {'titulo': 'Qual a altura da rede de vôlei nos jogos masculino e feminino?',
+          'nivel': 'dificil',
+          'opcoes': {'A': '2,4 para ambos', 'B': '1,8 m e 1,5 m', 'C': '2,43 m e 2,24 m', 'D': '2,45 m e 2,15 m'},
+          'correta': 'C'},
+            
+        {'titulo': 'Em que período da pré-história o fogo foi descoberto?',
+          'nivel': 'dificil',
+          'opcoes': {'A': 'Neolítico', 'B': 'Paleolítico', 'C': 'Idade dos Metais', 'D': 'Período da Pedra Polida'},
+          'correta': 'B'}
         ])
+      

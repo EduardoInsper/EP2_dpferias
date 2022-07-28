@@ -28,7 +28,7 @@ while continua!="exit" and continua!="EXIT":
     if dinheiro == 1000000:
         print("\033[1;30;42m \nPARABÉNS, você zerou o jogo e ganhou um milhão de reais! \033[0;0m ")
         break
-    #Questões
+    #Pergunta e pede resposta 
     print(funcoes.questao_para_texto(questao, id))
     resposta= input("\nSua resposta: ")
     opcoes=["A", "B", "C", "D", "pula", "ajuda", "parar"]
@@ -37,6 +37,7 @@ while continua!="exit" and continua!="EXIT":
         print('Opção inválida!')
         print('As opções de resposta são "A", "B", "C", "D", "ajuda", "pula" e "parar"!')
         resposta= input("\nSua resposta: ")
+    #Resposta dentro do esperado
     else:
         #Acerta questão
         if resposta==questao["correta"]:
@@ -77,19 +78,23 @@ while continua!="exit" and continua!="EXIT":
         elif resposta=="ajuda":
             if ajuda_cond == False:
                 ajudas -= 1
+                #Possui ajuda
                 if ajudas>0:
                     print(f"Ok, você tem {ajudas} ajudas restantes!")
                     continua=input("\nAperte ENTER para continuar... ")
                     print(f"\033[1;37m {funcoes.gera_ajuda(questao)} \033[0;0m")
                     ajuda_cond = True
+                #Ultima ajuda
                 elif ajudas == 0:
                     print(f"Ok, você não tem mais ajudas!")
                     continua=input("\nAperte ENTER para continuar... ")
                     print(f"\033[1;37m {funcoes.gera_ajuda(questao)} \033[0;0m")
                     ajuda_cond = True
+                # Acabou a ajuda
                 else :
                     print("Não deu! Você não tem mais ajudas!")
                     continua=input("\nAperte ENTER para continuar... ")
+            #Pediu uma segunda vez ajuda na mesma questão
             elif ajuda_cond == True:
                  print("Não deu! Você já pediu ajuda nessa questão!")
                  continua=input("\nAperte ENTER para continuar... ")
@@ -103,10 +108,11 @@ while continua!="exit" and continua!="EXIT":
         else:
             print(" \033[1;30;41m Que pena! Você errou e vai sair sem nada:( \033[0;0m ")
             continua=input("Aperte EXIT para sair ou ENTER para recomeçar... ")
+            #Usuario quer parar
             if continua=="exit" or continua=="EXIT":
                 print("Obrigado por jogar!")
                 break
-            #Reinicia jogo
+            #Reinicia jogo- usuario não quer parar
             else:
                 print("\n")
                 print("\n")

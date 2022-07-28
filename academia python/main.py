@@ -90,6 +90,8 @@ while continua!="exit" and continua!="EXIT":
                 print("Obrigado por jogar!")
                 break
             else:
+                print("\n")
+                print("\n")
                 print("\033[0;37;45m O jogo vai recomeçar! \033[0;0m")
                 continua=input("Aperte ENTER para continuar... ")
                 id=1

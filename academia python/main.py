@@ -21,12 +21,6 @@ while continua!="exit" and continua!="EXIT":
     if dinheiro == 1000000:
         print("\nPARABÉNS, você zerou o jogo e ganhou um milhão de reais!")
         break
-    if dinheiro==30000:
-        print("Parabéns! Você está no nível médio\n")
-        nivel="medio"
-    if dinheiro==300000:
-        print("Parabéns! Você está no nível dificil\n")
-        nivel="dificil"
     print(funcoes.questao_para_texto(questao, id))
     resposta= input("\nSua resposta: ")
     opcoes=["A", "B", "C", "D", "pula", "ajuda", "parar"]

@@ -15,7 +15,7 @@ ajuda_cond = False
 nivel="facil"
 lista_sorteada=[]
 lista_dinheiro=[0, 1000, 5000, 10000, 30000, 50000, 100000, 300000, 500000, 1000000]
-dinheiro = lista_dinheiro[id]
+dinheiro = lista_dinheiro[id-1]
 questao = funcoes.sorteia_questao_inedida(dados.dados, nivel, lista_sorteada)
 while continua!="exit" and continua!="EXIT":
     if dinheiro == 1000000:
@@ -29,7 +29,7 @@ while continua!="exit" and continua!="EXIT":
         nivel="dificil"
     print(funcoes.questao_para_texto(questao, id))
     resposta= input("\nSua resposta: ")
-    opcoes=["A", "B", "C", "D", "pula", "ajuda"]
+    opcoes=["A", "B", "C", "D", "pula", "ajuda", "parar"]
     while resposta not in opcoes:
         print('Opção inválida!')
         print('As opções de resposta são "A", "B", "C", "D", "ajuda", "pula" e "parar"!')
@@ -41,6 +41,12 @@ while continua!="exit" and continua!="EXIT":
             continua=input("Aperte ENTER para continuar ou EXIT para sair...\n\n")
             id+=1
             ajuda_cond = False
+            if dinheiro==30000:
+                print("Parabéns! Você está no nível médio\n")
+                nivel="medio"
+            if dinheiro==300000:
+                print("Parabéns! Você está no nível dificil\n")
+                nivel="dificil"
             questao = funcoes.sorteia_questao_inedida(dados.dados, nivel, lista_sorteada)
         elif resposta=="pula":
             if pular>0:
@@ -76,6 +82,11 @@ while continua!="exit" and continua!="EXIT":
             elif ajuda_cond == True:
                  print("Não deu! Você já pediu ajuda nessa questão!")
                  continua=input("\nAperte ENTER para continuar... ")
+        elif resposta=="parar":
+            quer_parar = input(f'Deseja mesmo parar [S/N]?? Caso responda "S", sairá com R$ {dinheiro}!')
+            if quer_parar=="S":
+                print(f"Ok, você saiu com R$ {dinheiro}!")
+                break
         else:
             print("Que pena! Você errou e vai sair sem nada:(")
             continua=input("Aperte EXIT para sair ou ENTER para recomeçar... ")
